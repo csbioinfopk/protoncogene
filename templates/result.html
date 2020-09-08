@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Prediction Result</h1>
+	<font size="4" face="Courier, Pica, Monospace"></font>
+	{% if 'Inv' not in result[0] %}
+	<table class="table">
+
+	<tbody>
+			{% if 'Non' in result[1]%}
+			<tr class="warning">
+				<h2 style="color:red" class="warning">{{result[1]}}</h2>
+			</tr>
+			{% else %}
+			<tr class="success">
+				<h2 style="color:green" class="warning">{{result[1]}}</h2>
+			</tr>
+			{% endif %}
+		</tbody>
+</table>
+{% else %}
+
+	<h2 style="color:red" class="warning">{{result[0]}}</h2>
+
+{% endif %}
+
+</br>
+<button class="btn btn-primary" style="margin-bottom: 3%;" onclick="history.back()">Back</button>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div>
+<h1 style="background-color:gray;text-align:center;color:white;">Identification of Proto Oncogenes Sequences</h1>
+    <p class="lead" style="font-family:courier;text-align:justify">
+            proto Oncogenes are involved in the process of cell growth, <br> they can turn into oncogenes,
+    when a mution (error) permantly activaties the genes</p>
+      <p class="lead" style="font-family:courier;text-align:justify"> A Proto-Oncogenes can't cause cancer unless a mution occurs in the
+          genes <br> that turns it into an oncogenes. when a mution occurs in a Proto-Oncogenes, <br>it becomea permantly turned on (activated)
+             </p>
+
+      {% from "includes/_formhelpers.html" import render_field %}
+  <form method="POST" action="">
+    <div class="form-group">
+      {{render_field(form.sequence, class_="form-control", style="width: 100%;height: 100px;")}}
+    </div>
+    <p><input type="submit" class="btn btn-primary" value="Submit Sequence"></p>
+  </form>
+
+  </div>
+
+{% endblock %}
+
